@@ -1,18 +1,16 @@
 class Solution {
 public:
     int countSegments(string s) {
-        
-            int count=0;
-        int n=s.size();
-        for(int i=0;i<n;i++){
-            while(i<n && s[i]==' ')i++;
-            bool flag=false;
-            while(i<n && s[i]!=' '){
+        int count=0;
+        for(int i=0;i<s.length();i++){
+            while(i<s.length()&& s[i]==' ') i++;
+            bool flag= false;
+            while(i<s.length() && s[i]!=' ' ){
                 i++;
-                flag=true;
+                flag= true;
             }
-            if(flag)count++;
+            if(flag) count++;
         }
-    return count;
+        return count;
     }
 };
