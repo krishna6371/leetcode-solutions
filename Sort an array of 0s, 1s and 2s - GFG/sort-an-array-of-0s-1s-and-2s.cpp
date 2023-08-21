@@ -10,19 +10,28 @@ class Solution
     public:
     void sort012(int a[], int n)
     {
-        map<int,int> mp;
-        for(int i=0;i<n;i++){
-            mp[a[i]]++;
-        }
-        int j=0;
-        for(auto it: mp){
-            int k=it.second;
-            while(k>0){
-                a[j]=it.first;
-                j++;
-                k--;
+        int lo=0;
+        int hi=n-1;
+        int mid=0;
+        // lo zero ka track rakh raha he so that it always places where non zero 
+        //element comes so that we have just change zero and 2
+        // if one element 2 is plced at last then reduce its value
+        while(mid<=hi){
+            
+            if(a[mid]==0){
+                swap(a[lo],a[mid]);
+                lo=lo+1;
+                mid=mid+1;
             }
-           
+           else if(a[mid]==1){
+                mid=mid+1;
+              
+            }
+           else if(a[mid]==2){
+                swap(a[mid],a[hi]);
+                hi=hi-1;
+               
+            }
         }
         // code here 
     }
