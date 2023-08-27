@@ -26,7 +26,8 @@ public:
      }
      int ans=unfav;
    
-     for(int i=0,j=fav;j<n;++i,++j){
+     for(int i=0,j=fav;j<n;i++,j++){
+        //  cout<<i<<j<<endl;
          if(arr[i]>k)
          unfav--;
          if(arr[j]>k)
