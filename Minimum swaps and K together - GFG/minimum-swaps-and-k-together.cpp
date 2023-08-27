@@ -12,64 +12,34 @@ using namespace std;
 class Solution
 {
 public:
- int minSwap(int arr[], int n, int k) {
-        int count = 0;  // Count of elements less than or equal to k
-        for (int i = 0; i < n; ++i) {
-            if (arr[i] <= k) {
-                ++count;
-            }
-        }
-        
-        // Count the elements greater than k in the first 'count' positions
-        int outOfPlace = 0;
-        for (int i = 0; i < count; ++i) {
-            if (arr[i] > k) {
-                ++outOfPlace;
-            }
-        }
-        
-        int ans = outOfPlace;
-        for (int i = 0, j = count; j < n; ++i, ++j) {
-            if (arr[i] > k) {
-                --outOfPlace;
-            }
-            if (arr[j] > k) {
-                ++outOfPlace;
-            }
-            ans = min(ans, outOfPlace);
-        }
-        
-        return ans;
-    }
-};
-    // int minSwap(int arr[], int n, int k) {
-    //  int unfav=0;
-    //  int fav=0;
-    //  for(int i=0;i<n;i++){
-    //      if(arr[i]<=k){
-    //          fav++;
-    //      }
-    //  }
-    //  for(int i=0;i<fav;i++){
-    //      if(arr[i]>k)
-    //      unfav++;
-    //  }
-    //  int ans=unfav;
-    //  cout<<ans<<endl;
-    //  for(int i=0,j=fav;j<n;i++,j++){
-    //      if(arr[i]>k)
-    //      unfav--;
-    //      if(arr[j]>k)
-    //      unfav++;
-    // ans=min(ans,unfav);
+    int minSwap(int arr[], int n, int k) {
+     int unfav=0;
+     int fav=0;
+     for(int i=0;i<n;i++){
+         if(arr[i]<=k){
+             fav++;
+         }
+     }
+     for(int i=0;i<fav;i++){
+         if(arr[i]>k)
+         unfav++;
+     }
+     int ans=unfav;
+   
+     for(int i=0,j=fav;j<n;++i,++j){
+         if(arr[i]>k)
+         unfav--;
+         if(arr[j]>k)
+         unfav++;
+    ans=min(ans,unfav);
          
-    //  }
+     }
      
 
-//   return ans;
+   return ans;
      
-//     }
-// };
+    }
+};
 
 
 //{ Driver Code Starts.
