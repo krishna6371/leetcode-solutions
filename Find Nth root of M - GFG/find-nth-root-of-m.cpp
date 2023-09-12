@@ -8,7 +8,7 @@ class Solution{
 	int NthRoot(int n, int m)
 	{
 	   int s=1;
-	   int e=9;
+	   int e=30;
 	   int mid=s+(e-s)/2;
 	   while(s<=e){
 	       if(pow(mid,n)==m){
