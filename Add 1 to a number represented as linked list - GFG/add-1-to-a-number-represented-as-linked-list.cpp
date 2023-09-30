@@ -75,8 +75,8 @@ class Solution
      }
    
      if(carry!=0){
-         Node* new1= new Node(carry);
-         prev-> next= new1;
+       
+         prev-> next= new Node(carry);
      }
    head= reverse(head);
    return head;
