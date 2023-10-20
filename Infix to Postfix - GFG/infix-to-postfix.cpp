@@ -33,8 +33,8 @@ class Solution {
             else if(s[i]=='('){
                 st.push(s[i]);
             }
-            else if(s[i]==')'){
-                while(st.top()!='('){
+            else if(!st.empty()&& s[i]==')'){
+                while(!st.empty()&&st.top()!='('){
                     ans+=st.top();
                     st.pop();
                 }
